@@ -20,6 +20,7 @@
 #include <stdlib.h>
 
 void display_elements(int *arr , int size);
+void gen_row(int *arr , int size);
 
 int main(){
     
@@ -36,6 +37,7 @@ int main(){
         scanf("%d" , (arr+i));
     }
     
+    gen_row(arr , size);
     display_elements(arr , size);
 }
 
@@ -49,5 +51,18 @@ void display_elements(int *arr , int size){
 }
 
 void gen_row(int *arr , int size){
+    
+    if(size > 0){
+        int *new_arr = (int*)malloc(sizeof(int) * (size-1));
+        
+        for (int i = 0; i < (size-1) ; i++) {
+            *(new_arr + i) = *(arr + i) + *(arr + (i+1));
+        }
+        //display_elements(new_arr , (size - 1));
+        gen_row(new_arr , (size - 1));
+        display_elements(new_arr , (size - 1));
+        return;
+
+    }
     
 }
