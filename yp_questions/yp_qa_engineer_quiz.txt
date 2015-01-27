@@ -1,0 +1,65 @@
+Technical Questions - If you do not know ruby, feel free to use psuedo code or the language of your choice for questions 2 and 3 
+
+1. Suppose there is a table in a mysql database called "listings" with the following schema
+
+	 column :id, :int
+	 column :name, :string
+	 column :city, :string
+	 column :state, :string
+	 column :zip, :int
+	 column :category, :string
+
+1a. Write a sql statement to query the table for all entries in the table where the category is "Book Stores", the city is Glendale and the state is "CA".
+
+2. Suppose you have access to a ruby object in irb (interactive ruby shell) called @book_stores.  This object is an array of hashes where each hash contains information about a book store.  In total there are n number of hashes in the @book_stores array.
+
+Ex:
+$irb>p @book_stores  
+@book_stores = [
+{ 
+ :id       => id1 
+ :name => "book_store1",
+ :city     => "city1",
+ :state  => "state1",
+ :zip      => zip1,
+ :category => "Book Stores"
+},
+{
+ :id       => id2 
+ :name => "book_store2",
+ :city     => "city2",
+ :state  => "state2",
+ :zip      => zip2,
+ :category => "Book Stores"
+},
+...
+{
+ :id       => idn 
+ :name => "book_storen",
+ :city     => "cityn",
+ :state  => "staten",
+ :zip      => zipn,
+ :category => "Book Stores"
+}
+]
+$irb>
+
+2a. write a simple ruby method that takes the @book_stores object as input, and prints the name of each store on a newline.  
+
+Ex:
+$irb>def print_name( book_stores ) { some ruby code }
+$irb>print_name(@book_stores)
+book_store1
+book_store2
+...
+book_storen
+$irb>
+
+2b. Write an automated test to verify this method works.  Assume invalid input is not supported.
+2c. Write an automated test to verify that any @book_stores object does not contain any duplicate book store names
+3. What is a linux command to check the local system resources be used?
+
+General Questions - 1-2 line answers please
+4. What do the acronyms CI, and TDD stand for?  How do they benefit software development?
+5. Under what conditions can a test be automated?  What are some important factors in deciding whether to invest in automating a test?
+6. At what point in the testing process should a tester report an issue?
